@@ -1,8 +1,8 @@
 import React from 'react';
 
-function home({date}) {
+function home({data}) {
     return (
-        date.map((d,i) =>{
+        data.map((d,i) =>{
             return(
                 <>
                 <h1>{d.id}</h1>

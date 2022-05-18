@@ -1,15 +1,15 @@
 import React from 'react';
 
 function loading(componet) {
-    return function withoutLoadingAnyComponent({isLoading,date}){
-        console.log((isLoading,date));
+    return function withoutLoadingAnyComponent({isLoading,DimData}){
+        console.log((isLoading,DimData));
         if(isLoading){
             return(
                 <p>Loading....</p>
             )
         }else{
             return(
-                <componet date={date} />
+                <componet data={DimData} />
             )
         }
     }

@@ -5,37 +5,38 @@ import Timefun from './kevin/Timefun';
 import { useEffect, useState } from 'react';
 import loading from './componet/loading';
 import home from './container/home/home';
+// import Timeclass from './time/Timeclass';
 // import Changecountry from './kevin/container';
 
-const HomewithLoading = loading(home)
-
+const HomeWithLoading = loading(home)
 
 function App() {
-    const[loading,setLoading] = useState(false);
-    const[date,setDate] = useState([]);
 
-    let orgDate =[
-      {id:777, name:"kevin"},
-      {id:777, name:"chodavdiya"},
-    ]
+  const [loading, setLoading]=useState(false);
+  const [data, setData]=useState([]);
 
-    useEffect(
-      () => {
-        setLoading(true);
-        setTimeout(() => {setLoading(false); setDate(orgDate)},3000);
-      },
-    [])
+  let dumData=[
+    {id:574, name:"Kevin", age:24},
+    {id:678, name:"Bhabho", age:68},
+    {id:876, name:"Denish", age:30}
+  ]
 
-    console.log(loading,date);
+  useEffect(
+    ()=>{
+      setLoading(true);
+      setTimeout(()=>{setLoading(false); setData(dumData)},2000);
+    },
+  [])
+  // console.log(loading,data);
 
-  return (
-    <>
-      <HomewithLoading
-        isloading={loading}
-        date={date}
-        />
-    </>
-  );
+return (
+  <>
+  <HomeWithLoading
+    isLoading={loading}
+    DimData={data}
+  />
+  
+  </>
+);
 }
-
 export default App;
